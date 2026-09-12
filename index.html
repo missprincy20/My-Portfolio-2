@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Princy Patle — AI & ML Engineer and Backend Developer. B.Tech CS at OP Jindal University. Building intelligent, scalable software solutions." />
+  <meta name="author" content="Princy Patle" />
+  <meta property="og:title" content="Princy Patle — AI & ML Engineer" />
+  <meta property="og:description" content="Portfolio of Princy Patle, AI/ML Engineer and Backend Developer." />
+  <meta property="og:type" content="website" />
+  <title>Princy Patle — AI & ML Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ─── Skip Link ─────────────────────────── -->
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- ─── Custom Cursor (desktop) ───────────── -->
+  <div class="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Background Layer ──────────────────── -->
+  <!-- Drop your video file at assets/video/bg-video.mp4 to activate -->
+  <div class="bg-video-wrap" aria-hidden="true">
+    <video
+      id="bg-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      src="assets/video/bg-video.mp4"
+    ></video>
+  </div>
+
+  <!-- Canvas fallback (animated particle field) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Global overlay for readability -->
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <!-- ─── Navigation ────────────────────────── -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <!-- Reading progress bar -->
+    <div id="nav-progress" style="
+      position:absolute; bottom:0; left:0; height:1px;
+      width:0; background:var(--accent-gold);
+      transition:width 0.1s linear; z-index:10;
+    " aria-hidden="true"></div>
+
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Princy Patle — home">
+        Princy<span>.</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"          data-section="about"          aria-label="About">About</a></li>
+        <li><a href="#experience"     data-section="experience"     aria-label="Experience">Experience</a></li>
+        <li><a href="#projects"       data-section="projects"       aria-label="Projects">Projects</a></li>
+        <li><a href="#skills"         data-section="skills"         aria-label="Skills">Skills</a></li>
+        <li><a href="#education"      data-section="education"      aria-label="Education">Education</a></li>
+        <li><a href="#contact"        data-section="contact"        aria-label="Contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a
+          href="assets/resume/Princy-Resume-(AI&ML).pdf"
+          download
+          class="btn btn-outline"
+          aria-label="Download resume PDF"
+        >Resume ↓</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button
+        id="nav-hamburger"
+        class="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Mobile Nav Drawer ──────────────────── -->
+  <div id="nav-mobile" class="nav-mobile" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <a href="#about"          aria-label="About">About</a>
+    <a href="#experience"     aria-label="Experience">Experience</a>
+    <a href="#projects"       aria-label="Projects">Projects</a>
+    <a href="#skills"         aria-label="Skills">Skills</a>
+    <a href="#education"      aria-label="Education">Education</a>
+    <a href="#contact"        aria-label="Contact">Contact</a>
+    <a
+      href="assets/resume/Princy-Resume-(AI&ML).pdf"
+      download
+      class="btn btn-primary"
+      style="margin-top:1rem;"
+      aria-label="Download resume"
+    >Download Resume</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <img src="assets/images/hero_wisdom_1789205353825.jpg" class="decor-ancient float-gentle" style="top: 15%; left: -5%; width: 45vw; max-width: 600px; opacity: 0.25;" alt="" aria-hidden="true" />
+
+      <!-- Text -->
+      <div class="hero-text">
+        <p class="hero-eyebrow hero-entrance-1">
+          Available for Opportunities
+        </p>
+
+        <h1 class="hero-name hero-entrance-2">
+          Princy<br>Patle
+        </h1>
+
+        <p class="hero-role hero-entrance-3">
+          <span id="hero-typing" aria-live="polite">AI &amp; ML Engineer</span>
+          <span class="cursor-blink" aria-hidden="true" style="
+            display:inline-block;
+            width:2px; height:1em;
+            background:var(--accent-gold);
+            margin-left:3px;
+            vertical-align:text-bottom;
+            animation: cursorBlink 0.9s step-end infinite;
+          "></span>
+        </p>
+
+        <p class="hero-bio hero-entrance-4">
+          Computer Science undergraduate at <strong>OP Jindal University</strong>, passionate
+          about building AI-powered applications, LLM-driven solutions, and scalable backend
+          systems. I turn research ideas into production-ready software.
+        </p>
+
+        <div class="hero-actions hero-entrance-4">
+          <a href="#projects" class="btn btn-primary" aria-label="View my projects">
+            View Projects
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline" aria-label="Get in touch">Get in Touch</a>
+        </div>
+
+        <div class="hero-socials hero-entrance-5">
+          <a href="https://linkedin.com/in/princy-patle" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.91 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.45v6.3zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.83-.26.83-.57v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.83.56A12 12 0 0012 .3z"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:princypatle10@gmail.com" aria-label="Send email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="hero-photo-wrap hero-entrance-3">
+        <div class="hero-photo-frame float-gentle">
+          <img
+            src="assets/images/princy-photo.jpg"
+            alt="Princy Patle — AI & ML Engineer"
+            class="hero-photo"
+            width="280"
+            height="340"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-indicator" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+       ═══════════════════════════════════════════ -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+        <img src="assets/images/about_books_1789205551804.jpg" class="decor-ancient float-gentle" style="bottom: 10%; right: -10%; width: 40vw; max-width: 500px; opacity: 0.25;" alt="" aria-hidden="true" />
+      <div class="about-grid">
+
+        <div class="about-left">
+          <p class="section-label reveal">About</p>
+          <h2 class="section-title reveal" id="about-heading">
+            Building intelligent<br>software for the<br><em>real world.</em>
+          </h2>
+          <div class="divider reveal"></div>
+        </div>
+
+        <div class="about-right">
+          <p class="about-body reveal">
+            I'm <strong>Princy Patle</strong>, a Computer Science undergraduate at
+            <strong>OP Jindal University</strong>, Raigarh — specialising in AI, Machine
+            Learning, and Backend Development. I build end-to-end intelligent applications:
+            from training models and building RAG pipelines, to shipping production APIs and
+            interactive frontends.
+          </p>
+          <p class="about-body reveal">
+            My experience spans <strong>AI/ML internships</strong> (Unlox) and
+            <strong>full-stack software development</strong> (Pivot Foundation), giving me
+            a practical perspective across both the data-science and engineering disciplines.
+            I'm driven by the challenge of solving real problems with clean, scalable solutions.
+          </p>
+          <p class="about-body reveal">
+            When I'm not writing Python or debugging APIs, I'm exploring the latest research in
+            <strong>Large Language Models</strong> and building tools that make AI genuinely
+            useful for everyday people.
+          </p>
+
+          <div class="about-stats stagger">
+            <div class="stat-card reveal-scale">
+              <div class="stat-num" data-count="7" data-suffix="">7</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-card reveal-scale">
+              <div class="stat-num" data-count="2" data-suffix="">2</div>
+              <div class="stat-label">Internships</div>
+            </div>
+            <div class="stat-card reveal-scale">
+              <div class="stat-num" data-count="7.7" data-suffix="" data-float="true">7.7</div>
+              <div class="stat-label">CGPA / 10</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCE
+       ═══════════════════════════════════════════ -->
+  <section id="experience" aria-labelledby="exp-heading">
+    <div class="container">
+        <img src="assets/images/experience_journey_1789205836528.jpg" class="decor-ancient float-gentle" style="top: 25%; left: -10%; width: 45vw; max-width: 550px; opacity: 0.2;" alt="" aria-hidden="true" />
+
+      <p class="section-label reveal">Experience</p>
+      <h2 class="section-title reveal" id="exp-heading">Where I've worked</h2>
+      <div class="divider reveal"></div>
+
+      <div class="timeline">
+
+        <!-- Unlox -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-period">Jun 2026 — Aug 2026</p>
+          <h3 class="timeline-role">AI &amp; ML Intern</h3>
+          <p class="timeline-company">
+            Unlox
+            <span class="badge">Remote</span>
+          </p>
+          <div class="timeline-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Scikit-learn</span>
+            <span class="tool-tag">Hugging Face</span>
+            <span class="tool-tag">FAISS</span>
+            <span class="tool-tag">RAG</span>
+            <span class="tool-tag">LLM APIs</span>
+            <span class="tool-tag">Streamlit</span>
+            <span class="tool-tag">Git</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Developed AI/ML solutions using Python, Machine Learning models, RAG, and Generative AI technologies.</li>
+            <li>Built an AI-powered <strong>Resume Analyzer</strong> and a <strong>Domain-Specific RAG Chatbot</strong>, implementing data processing, semantic search, and intelligent response generation.</li>
+            <li>Leveraged Scikit-learn, Hugging Face, FAISS, and LLM APIs end-to-end while managing project code with Git/GitHub.</li>
+          </ul>
+        </div>
+
+        <!-- Pivot Foundation -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-period">Jun 2026 — Aug 2026</p>
+          <h3 class="timeline-role">Software Developer Intern</h3>
+          <p class="timeline-company">
+            Pivot Foundation
+          </p>
+          <div class="timeline-tools">
+            <span class="tool-tag">React.js</span>
+            <span class="tool-tag">TypeScript</span>
+            <span class="tool-tag">Node.js</span>
+            <span class="tool-tag">FastAPI</span>
+            <span class="tool-tag">Tailwind CSS</span>
+            <span class="tool-tag">REST APIs</span>
+            <span class="tool-tag">Git/GitHub</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Developed responsive, user-friendly web applications using React.js, TypeScript, HTML, CSS, and Tailwind CSS.</li>
+            <li>Built and integrated RESTful APIs using Node.js, Express.js, and FastAPI to enable seamless frontend-backend communication.</li>
+            <li>Implemented reusable components, API integration, and version control following clean and maintainable development practices.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROJECTS
+       ═══════════════════════════════════════════ -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+        <img src="assets/images/projects_tech_scroll_1789205524102.jpg" class="decor-ancient float-gentle" style="bottom: 15%; right: -15%; width: 50vw; max-width: 700px; opacity: 0.2;" alt="" aria-hidden="true" />
+
+      <p class="section-label reveal">Projects</p>
+      <h2 class="section-title reveal" id="projects-heading">Things I've built</h2>
+      <div class="divider reveal"></div>
+
+      <div class="projects-grid">
+
+        <!-- Featured: AI Resume Analyzer -->
+        <article class="project-card featured reveal-scale" aria-labelledby="proj1-title">
+          <div class="featured-text">
+            <span class="project-number">01 — Featured</span>
+            <h3 class="project-title" id="proj1-title">
+              AI Resume Analyzer &amp; Job Recommendation System
+            </h3>
+            <p class="project-desc">
+              An end-to-end AI system that extracts skills from resumes, evaluates
+              resume–job compatibility, identifies missing skills, and generates personalised
+              learning roadmaps. Integrated LLM capabilities for intelligent career
+              recommendations using semantic similarity and NLP.
+            </p>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">NLP</span>
+              <span class="stack-tag">TF-IDF</span>
+              <span class="stack-tag">Sentence Transformers</span>
+              <span class="stack-tag">LLM APIs</span>
+              <span class="stack-tag">Streamlit</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-period">Jun – Jul 2026</span>
+              <a
+                href="https://github.com/missprincy20"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                aria-label="View AI Resume Analyzer on GitHub"
+              >
+                GitHub
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="featured-visual" aria-hidden="true">
+            <span class="featured-icon">🤖</span>
+          </div>
+        </article>
+
+        <!-- Project 2: RAG Chatbot -->
+        <article class="project-card reveal" aria-labelledby="proj2-title">
+          <span class="project-number">02</span>
+          <h3 class="project-title" id="proj2-title">Domain-Specific RAG Chatbot</h3>
+          <p class="project-desc">
+            A Retrieval-Augmented Generation chatbot answering questions from user-uploaded PDF documents.
+            Implements document processing, recursive text chunking, FAISS vector storage, and
+            Groq-powered LLMs for accurate, context-grounded responses.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">LangChain</span>
+            <span class="stack-tag">FAISS</span>
+            <span class="stack-tag">Hugging Face</span>
+            <span class="stack-tag">Groq</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jun – Jul 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View RAG Chatbot on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: AURA -->
+        <article class="project-card reveal" aria-labelledby="proj3-title">
+          <span class="project-number">03</span>
+          <h3 class="project-title" id="proj3-title">AURA — Voice Productivity Assistant</h3>
+          <p class="project-desc">
+            A voice-based AI productivity assistant using Python and FastAPI for task automation.
+            Features natural-language voice workflows, Focus Mode, placement preparation agents,
+            and AI-powered Gmail management with Supabase authentication and Google OAuth.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Groq</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">Gmail API</span>
+            <span class="stack-tag">Google OAuth</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jun – Jul 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View AURA on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Perplexity Clone -->
+        <article class="project-card reveal" aria-labelledby="proj4-title">
+          <span class="project-number">04</span>
+          <h3 class="project-title" id="proj4-title">Perplexity Clone</h3>
+          <p class="project-desc">
+            A search and conversational web app with real-time information retrieval. Modular
+            search agents for web, Reddit, and YouTube, integrated with SearxNG and Groq/Gemini
+            LLMs for contextual responses. Built with React and a full chat interaction interface.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">SearxNG</span>
+            <span class="stack-tag">Groq</span>
+            <span class="stack-tag">Gemini</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jun – Jul 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Perplexity Clone on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: Placement Agent -->
+        <article class="project-card reveal" aria-labelledby="proj5-title">
+          <span class="project-number">05</span>
+          <h3 class="project-title" id="proj5-title">AI Placement Preparation Agent</h3>
+          <p class="project-desc">
+            An AI-powered placement assistant that generates personalised technical interview
+            questions, coding guidance, and HR preparation material. Supports Hindi &amp; English
+            with LLM-based question generation and prompt engineering.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">LLMs</span>
+            <span class="stack-tag">NLP</span>
+            <span class="stack-tag">Streamlit</span>
+            <span class="stack-tag">Prompt Engineering</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jan – Feb 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Placement Agent on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: Customer Churn -->
+        <article class="project-card reveal" aria-labelledby="proj6-title">
+          <span class="project-number">06</span>
+          <h3 class="project-title" id="proj6-title">Customer Churn Analysis</h3>
+          <p class="project-desc">
+            ML-based churn analysis system identifying at-risk customers using Logistic Regression
+            and Random Forest classifiers. Includes EDA, feature analysis, model evaluation
+            (accuracy, precision, recall, F1), and an interactive Streamlit dashboard.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">Scikit-learn</span>
+            <span class="stack-tag">Matplotlib</span>
+            <span class="stack-tag">Seaborn</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jan – Feb 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Customer Churn Analysis on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 7: Prompt Tester -->
+        <article class="project-card reveal" aria-labelledby="proj7-title">
+          <span class="project-number">07</span>
+          <h3 class="project-title" id="proj7-title">Prompt Tester Web App</h3>
+          <p class="project-desc">
+            An interactive web application for creating, testing, and refining AI prompts.
+            Features prompt templates, API-based response generation, and side-by-side comparison
+            of outputs — built with React, TypeScript and a full frontend-backend integration.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">API Integration</span>
+            <span class="stack-tag">Prompt Engineering</span>
+          </div>
+          <div class="project-footer">
+            <span class="project-period">Jan – Feb 2026</span>
+            <a href="https://github.com/missprincy20" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Prompt Tester on GitHub">
+              GitHub <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS
+       ═══════════════════════════════════════════ -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+        <img src="assets/images/skills_geometry_1789205867023.jpg" class="decor-ancient float-gentle" style="top: 5%; right: -10%; width: 50vw; max-width: 600px; opacity: 0.2;" alt="" aria-hidden="true" />
+
+      <p class="section-label reveal">Skills</p>
+      <h2 class="section-title reveal" id="skills-heading">Technologies &amp; tools</h2>
+      <div class="divider reveal"></div>
+
+      <div class="skills-layout">
+
+        <!-- Left column: AI/ML + Languages -->
+        <div class="reveal-left">
+          <p class="skills-column-title">AI &amp; Machine Learning</p>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Languages</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag primary">Python</span>
+              <span class="skill-tag primary">JavaScript</span>
+              <span class="skill-tag primary">TypeScript</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Machine Learning</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">Supervised Learning</span>
+              <span class="skill-tag">Unsupervised Learning</span>
+              <span class="skill-tag">Feature Engineering</span>
+              <span class="skill-tag">Model Evaluation</span>
+              <span class="skill-tag">Scikit-learn</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Deep Learning</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">CNNs</span>
+              <span class="skill-tag">Neural Networks</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Pandas</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">NLP &amp; GenAI</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag primary">LLMs</span>
+              <span class="skill-tag primary">RAG</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">FAISS</span>
+              <span class="skill-tag">Hugging Face</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Computer Vision</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">MediaPipe</span>
+              <span class="skill-tag">Image Classification</span>
+              <span class="skill-tag">OpenCV</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Web + Tools -->
+        <div class="reveal-right">
+          <p class="skills-column-title">Development &amp; Tools</p>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Frontend</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag primary">React.js</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Backend</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag primary">FastAPI</span>
+              <span class="skill-tag primary">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Streamlit</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Databases &amp; Auth</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Google OAuth</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Tools &amp; Platforms</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Google Colab</span>
+              <span class="skill-tag">Groq</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Concepts</p>
+            <div class="skill-tags stagger">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">MLOps</span>
+              <span class="skill-tag">Backend Architecture</span>
+              <span class="skill-tag">API Integration</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EDUCATION
+       ═══════════════════════════════════════════ -->
+  <section id="education" aria-labelledby="edu-heading">
+    <div class="container">
+        <img src="assets/images/education_library_1789205508370.jpg" class="decor-ancient float-gentle" style="top: -10%; left: -15%; width: 50vw; max-width: 600px; opacity: 0.2;" alt="" aria-hidden="true" />
+
+      <p class="section-label reveal">Education</p>
+      <h2 class="section-title reveal" id="edu-heading">Academic background</h2>
+      <div class="divider reveal"></div>
+
+      <div class="education-card reveal-scale">
+        <div class="edu-icon" aria-hidden="true">🎓</div>
+        <div class="edu-main">
+          <h3 class="edu-degree">B.Tech — Computer Science &amp; Engineering</h3>
+          <p class="edu-university">OP Jindal University</p>
+          <p class="edu-location">Raigarh, Chhattisgarh, India</p>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-cgpa" data-count="7.7" data-suffix="" data-float="true" aria-label="CGPA 7.7 out of 10">7.7</div>
+          <div class="edu-cgpa-label">CGPA / 10</div>
+          <p class="edu-expected">Expected Graduation: <strong>July 2027</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CERTIFICATIONS
+       ═══════════════════════════════════════════ -->
+  <section id="certifications" aria-labelledby="certs-heading">
+    <div class="container">
+
+      <p class="section-label reveal">Recognition</p>
+      <h2 class="section-title reveal" id="certs-heading">Awards &amp; Certifications</h2>
+      <div class="divider reveal"></div>
+
+      <div class="certs-grid stagger">
+
+        <!-- Unlox Internship -->
+        <div class="cert-card reveal">
+          <div class="cert-icon-fallback" aria-hidden="true">🤖</div>
+          <div class="cert-body">
+            <h3 class="cert-title">AI/ML Internship Certificate</h3>
+            <p class="cert-issuer">Unlox</p>
+            <p class="cert-year">2026</p>
+          </div>
+        </div>
+
+        <!-- Pivot Foundation -->
+        <div class="cert-card reveal">
+          <div class="cert-icon-fallback" aria-hidden="true">💻</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Software Development Internship Certificate</h3>
+            <p class="cert-issuer">Pivot Foundation</p>
+            <p class="cert-year">2026</p>
+          </div>
+        </div>
+
+        <!-- Cisco -->
+        <div class="cert-card reveal">
+          <div class="cert-icon-wrap" aria-hidden="true">
+            <img
+              src="assets/images/cisco-badge.png"
+              alt="Cisco Networking Academy — Data Analytics Essentials badge"
+              loading="lazy"
+              width="44"
+              height="44"
+            />
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Data Analytics Essentials</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <p class="cert-year">2024</p>
+          </div>
+        </div>
+
+        <!-- OPJU -->
+        <div class="cert-card reveal">
+          <div class="cert-icon-fallback" aria-hidden="true">🎓</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Value-Added Course — Universal Human Values</h3>
+            <p class="cert-issuer">OP Jindal University</p>
+            <p class="cert-year">2023</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+       ═══════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+        <img src="assets/images/about_books_1789205551804.jpg" class="decor-ancient float-gentle" style="top: -5%; right: -10%; width: 40vw; max-width: 500px; opacity: 0.2;" alt="" aria-hidden="true" />
+
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-title reveal" id="contact-heading">
+        Let's build something<br><em>together.</em>
+      </h2>
+      <div class="divider reveal"></div>
+
+      <div class="contact-layout">
+
+        <div class="contact-intro reveal-left">
+          <p>
+            I'm currently open to AI/ML engineering roles, backend development opportunities,
+            and research collaborations. Whether you have a project in mind, a job opportunity,
+            or just want to talk tech — my inbox is open.
+          </p>
+
+          <div class="contact-links stagger">
+            <a
+              href="mailto:princypatle10@gmail.com"
+              class="contact-link-item"
+              aria-label="Email Princy"
+            >
+              <span class="contact-link-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              princypatle10@gmail.com
+            </a>
+
+            <a
+              href="https://linkedin.com/in/princy-patle"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+              aria-label="LinkedIn profile"
+            >
+              <span class="contact-link-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.91 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.45v6.3zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+              </span>
+              linkedin.com/in/princy-patle
+            </a>
+
+            <a
+              href="https://github.com/missprincy20"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-item"
+              aria-label="GitHub profile"
+            >
+              <span class="contact-link-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.83-.26.83-.57v-2.2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.83.56A12 12 0 0012 .3z"/></svg>
+              </span>
+              github.com/missprincy20
+            </a>
+
+            <a
+              href="assets/resume/Princy-Resume-(AI&ML).pdf"
+              download
+              class="contact-link-item"
+              aria-label="Download Princy's resume"
+            >
+              <span class="contact-link-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </span>
+              Download Resume (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick contact form -->
+        <form
+          id="contact-form"
+          class="contact-form reveal-right"
+          novalidate
+          aria-label="Contact form"
+        >
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              placeholder="Tell me about your project or opportunity..."
+              rows="5"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+            Send Message
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-name">Princy<span>.</span></p>
+      <p class="footer-copy">© 2026 Princy Patle. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/missprincy20"      target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/princy-patle" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:princypatle10@gmail.com"                                                   aria-label="Email">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ─── Scripts ─────────────────────────────── -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
