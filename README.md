@@ -22,3 +22,8 @@ A personal portfolio website showcasing my skills, projects, experience, educati
 ```bash
 git clone https://github.com/missprincy20/My-Portfolio-2.git
 cd My-Portfolio-2
+
+## Deploy Link
+
+```bash
+https://fabulous-pixie-87d7a5.netlify.app
