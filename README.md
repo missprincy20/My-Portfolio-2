@@ -23,6 +23,7 @@ A personal portfolio website showcasing my skills, projects, experience, educati
 git clone https://github.com/missprincy20/My-Portfolio-2.git
 cd My-Portfolio-2
 
+```
 ## Deploy Link
 
 ```bash
